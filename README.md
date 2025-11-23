@@ -315,6 +315,44 @@ python tools/generate_graphs.py
 - `baselines/graphs/error_rate.png` - Error rate comparison (CER, WER)
 - `baselines/graphs/summary_table.png` - Summary table visualization
 
+#### 7. Training Visualization (`tools/plot_training.py`)
+
+Plot training metrics from PaddleOCR training logs.
+
+**Usage:**
+```bash
+# Generate training graphs
+python tools/plot_training.py
+
+# Save metrics to JSON
+python tools/plot_training.py --save-metrics
+
+# Custom log path
+python tools/plot_training.py --log output/romanian_ppocrv3/train.log
+```
+
+**Input:** Parses training log file for accuracy, loss, and learning rate
+
+**Output graphs:**
+- `baselines/graphs/training_accuracy.png` - Training accuracy over epochs
+- `baselines/graphs/training_loss.png` - Training loss over epochs
+- `baselines/graphs/learning_rate.png` - Learning rate schedule
+- `baselines/graphs/validation_accuracy.png` - Validation accuracy progression
+
+#### 8. Single Image Comparison (`tools/compare_models.py`)
+
+Quick test to compare all three models on a single image.
+
+**Usage:**
+```bash
+python tools/compare_models.py --image path/to/image.jpg
+```
+
+**Output:** Prints predictions from all three models side by side:
+- EN PP-OCRv3
+- PP-OCRv5 Latin
+- Romanian PP-OCRv3
+
 ## Dataset Summary
 
 **Generated using:** [`scripts/generate_training_data.py`](scripts/generate_training_data.py)
@@ -458,6 +496,16 @@ All Romanian diacritics with correct Unicode (comma-below, not cedilla):
 - **GPU memory:** 12.6 GB / 16 GB
 - **Training speed:** 240-260 samples/s
 
+### Training Progress
+
+![Training Accuracy](baselines/graphs/training_accuracy.png)
+
+![Training Loss](baselines/graphs/training_loss.png)
+
+![Validation Accuracy](baselines/graphs/validation_accuracy.png)
+
+![Learning Rate Schedule](baselines/graphs/learning_rate.png)
+
 ### Model Performance
 
 ![Overall Accuracy](baselines/graphs/overall_accuracy.png)
@@ -530,7 +578,9 @@ romanianocr/
 │   ├── test_baselines.py          # Baseline model comparison
 │   ├── validate_fonts.py          # Font validation tool
 │   ├── download_pretrained.py     # Download all baseline models (v3/v4/v5)
-│   └── generate_graphs.py         # Generate performance comparison graphs
+│   ├── generate_graphs.py         # Generate performance comparison graphs
+│   ├── plot_training.py           # Plot training metrics and generate graphs
+│   └── compare_models.py          # Compare all models on single image
 ├── scripts/                       # Data generation
 │   └── generate_training_data.py  # Synthetic document generation
 ├── config/                        # Configuration files
