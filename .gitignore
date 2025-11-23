@@ -1,0 +1,102 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# Data directories - datasets and generated data (regenerate on target machine)
+data/
+scripts/data/
+!scripts/data/.gitkeep
+
+# Corpus files (large - not tracked in git)
+*.txt.gz
+*.txt.xz
+config/romanian_corpus.txt
+
+# Test outputs
+test_output/
+
+# Images (except baselines/graphs which we want to keep)
+*.jpg
+*.jpeg
+!baselines/graphs/*.png
+
+# Large prediction files (keep only metrics)
+baselines/*.jsonl
+baselines/*_predictions.jsonl
+
+# Model checkpoints and outputs
+models/
+checkpoints/
+output/
+inference/
+
+# WarpCTC build artifacts
+warpctc_build/
+
+# PaddleOCR clone (will be cloned on target machine)
+PaddleOCR/
+
+# Pretrained models (will be downloaded on target machine)
+pretrained_models/
+
+# Export directory (temporary packaging)
+export/
+
+# OCR test directory
+OCR/
+
+# Language model files
+*.arpa
+*.klm
+*.binary
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# HuggingFace cache
+.cache/
+
+#PaddleOCR
+PaddleOCR/

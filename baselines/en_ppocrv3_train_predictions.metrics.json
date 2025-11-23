@@ -1,0 +1,61 @@
+{
+  "total_samples": 99752,
+  "exact_matches": 843,
+  "exact_accuracy": 0.008450958376774401,
+  "character_accuracy": 0.93301246285209,
+  "character_error_rate": 0.06698753714790992,
+  "word_accuracy": 0.6451675079301142,
+  "word_error_rate": 0.3548324920698857,
+  "diacritic_accuracy": {
+    "ă": {
+      "accuracy": 0.0,
+      "errors": 178560,
+      "total": 178560
+    },
+    "â": {
+      "accuracy": 0.0,
+      "errors": 29509,
+      "total": 29509
+    },
+    "î": {
+      "accuracy": 0.0,
+      "errors": 56225,
+      "total": 56225
+    },
+    "ș": {
+      "accuracy": 0.0,
+      "errors": 57361,
+      "total": 57361
+    },
+    "ț": {
+      "accuracy": 0.0,
+      "errors": 71649,
+      "total": 71649
+    },
+    "Ă": {
+      "accuracy": 0.0,
+      "errors": 2308,
+      "total": 2308
+    },
+    "Â": {
+      "accuracy": 0.0,
+      "errors": 523,
+      "total": 523
+    },
+    "Î": {
+      "accuracy": 0.0,
+      "errors": 8072,
+      "total": 8072
+    },
+    "Ș": {
+      "accuracy": 0.0,
+      "errors": 3276,
+      "total": 3276
+    },
+    "Ț": {
+      "accuracy": 0.0,
+      "errors": 1420,
+      "total": 1420
+    }
+  }
+}

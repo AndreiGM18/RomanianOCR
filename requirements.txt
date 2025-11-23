@@ -1,0 +1,74 @@
+# ============================================================================
+# Romanian OCR Training Requirements
+# ============================================================================
+# Python: 3.9 (recommended)
+# CUDA: 12.9 (for NVIDIA RTX 50 series)
+# GPU: RTX 5080 (Compute Capability 12.0)
+#
+# Installation order:
+# 1. Install PaddlePaddle GPU (see README Setup section)
+# 2. Install PaddleOCR: pip install -e PaddleOCR/
+# 3. Install these requirements: pip install -r requirements.txt
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Image Processing & Synthesis
+# ----------------------------------------------------------------------------
+Pillow==9.5.0                # Image manipulation for synthetic data generation
+opencv-python                # Image processing and transformations
+albumentations==1.3.0        # Image augmentation library
+diffimg==0.2.3               # Image comparison utilities
+
+# ----------------------------------------------------------------------------
+# Data Generation
+# ----------------------------------------------------------------------------
+arabic-reshaper==2.1.4       # Text shaping for complex scripts
+python-bidi==0.4.2           # Bidirectional text support
+wikipedia==1.4.0             # Optional: Wikipedia corpus source
+requests>=2.31.0             # HTTP requests for downloads
+urllib3>=1.26,<2            # HTTP library (compatible with requests)
+tqdm>=4.65.0                # Progress bars
+
+# ----------------------------------------------------------------------------
+# Document Processing
+# ----------------------------------------------------------------------------
+beautifulsoup4               # HTML/XML parsing (corpus extraction)
+PyMuPDF                      # PDF text extraction
+pdf2image                    # PDF to image conversion
+lxml                         # XML/HTML parsing
+
+# ----------------------------------------------------------------------------
+# Machine Learning Core
+# ----------------------------------------------------------------------------
+numpy>=1.24.0,<2.0.0        # Numerical computing
+matplotlib>=3.7.0            # Plotting and visualization
+lmdb                         # Lightning memory-mapped database
+
+# ----------------------------------------------------------------------------
+# OCR Training Dependencies
+# ----------------------------------------------------------------------------
+# PaddlePaddle GPU - Install separately first!
+# For RTX 50 series (CC 12.0) with CUDA 12.9:
+# pip install https://paddle-qa.bj.bcebos.com/paddle-pipeline/Develop-TagBuild-Training-Windows-Gpu-Cuda12.9-Cudnn9.9-Trt10.5-Mkl-Avx-VS2019-SelfBuiltPypiUse/86d658f56ebf3a5a7b2b33ace48f22d10680d311/paddlepaddle_gpu-3.0.0.dev20250717-cp39-cp39-win_amd64.whl
+#
+# For other GPUs: https://www.paddlepaddle.org.cn/install/quick
+
+# PaddleOCR - Install in editable mode:
+# pip install -e PaddleOCR/
+
+kenlm                        # Language model for post-processing
+python-Levenshtein           # Edit distance metrics
+visualdl                     # Training visualization
+
+# ----------------------------------------------------------------------------
+# Model Hub
+# ----------------------------------------------------------------------------
+huggingface_hub              # Model downloads and sharing
+
+# ============================================================================
+# Auto-installed dependencies (you don't need to install these manually):
+# - scikit-learn (required by albumentations)
+# - scipy (required by scikit-learn)
+# - pandas (required by visualdl)
+# - NVIDIA CUDA libraries (bundled with paddlepaddle-gpu)
+# ============================================================================
