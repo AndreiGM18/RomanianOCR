@@ -21,8 +21,8 @@ Got 99.8% character accuracy with 98.4% diacritic accuracy on the validation set
 
 1. **Clone repository:**
    ```bash
-   git clone https://github.com/Anf/romanianocr.git
-   cd romanianocr
+   git clone https://github.com/AndreiGM18/RomanianOCR.git
+   cd RomanianOCR
    ```
 
 2. **Clone PaddleOCR:**
