@@ -341,17 +341,35 @@ python tools/plot_training.py --log output/romanian_ppocrv3/train.log
 
 #### 8. Single Image Comparison (`tools/compare_models.py`)
 
-Quick test to compare all three models on a single image.
+Quick test to compare all three models on a single line image.
 
 **Usage:**
 ```bash
-python tools/compare_models.py --image path/to/image.jpg
+python tools/compare_models.py --image path/to/line_image.jpg
 ```
 
-**Output:** Prints predictions from all three models side by side:
+**Output:** Prints predictions from all models side by side:
 - EN PP-OCRv3
 - PP-OCRv5 Latin
-- Romanian PP-OCRv3
+- Romanian PP-OCRv3 (Epoch 10)
+- Romanian PP-OCRv3 (Epoch 50)
+
+**Note:** This tool expects cropped line images, not full pages.
+
+#### 9. Full Page Comparison (`tools/compare_fullpage.py`)
+
+Compare all three models on a full page image with detection + recognition.
+
+**Usage:**
+```bash
+python tools/compare_fullpage.py --image path/to/page.jpg
+```
+
+**Output:** Table showing all detected text lines with predictions from all three models side by side.
+
+**Models used:**
+- Detection: Chinese PP-OCRv3 (better quality than EN detector)
+- Recognition: EN PP-OCRv3, PP-OCRv5 Latin, Romanian PP-OCRv3 (Epoch 10 & 50)
 
 ## Dataset Summary
 
@@ -580,7 +598,8 @@ romanianocr/
 │   ├── download_pretrained.py     # Download all baseline models (v3/v4/v5)
 │   ├── generate_graphs.py         # Generate performance comparison graphs
 │   ├── plot_training.py           # Plot training metrics and generate graphs
-│   └── compare_models.py          # Compare all models on single image
+│   ├── compare_models.py          # Compare all models on single line image
+│   └── compare_fullpage.py        # Compare all models on full page with detection
 ├── scripts/                       # Data generation
 │   └── generate_training_data.py  # Synthetic document generation
 ├── config/                        # Configuration files

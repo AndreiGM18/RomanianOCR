@@ -52,6 +52,11 @@ MODELS = {
         'output_dir': 'PaddleOCR/en_PP-OCRv3_det_infer',
         'description': 'EN PP-OCRv3 detection',
     },
+    'en_v4_det': {
+        'url': 'https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_det_infer.tar',
+        'output_dir': 'PaddleOCR/en_PP-OCRv4_det_infer',
+        'description': 'EN PP-OCRv4 detection',
+    },
     'ch_v3_det': {
         'url': 'https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar',
         'output_dir': 'baselines/ch_PP-OCRv3_det',
